@@ -1905,12 +1905,14 @@ h6 {
   overflow: hidden;
   box-shadow: var(--shadow-xl);
   position: relative;
+  min-height: 420px;
 }
 .hero-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  min-height: 420px;
 }
 .hero-image::after {
   content: "";
@@ -1935,6 +1937,98 @@ h6 {
   object-fit: cover;
   display: block;
   min-height: 320px;
+}
+
+/* Full-bleed image banner (edge-to-edge) */
+.image-banner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  max-height: 480px;
+}
+.image-banner img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  display: block;
+}
+.image-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.02) 0%,
+    rgba(0, 0, 0, 0.15) 100%
+  );
+  pointer-events: none;
+}
+@media (max-width: 768px) {
+  .image-banner,
+  .image-banner img {
+    max-height: 280px;
+    height: 280px;
+  }
+}
+
+/* Tall side image (for 2-col layouts) */
+.image-tall {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  min-height: 480px;
+  box-shadow: var(--shadow-xl);
+}
+.image-tall img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  min-height: 480px;
+}
+.image-tall::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.06);
+  pointer-events: none;
+}
+@media (max-width: 768px) {
+  .image-tall {
+    min-height: 320px;
+  }
+  .image-tall img {
+    min-height: 320px;
+  }
+}
+
+/* Image with rounded corners inside container */
+.image-showcase {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+.image-showcase img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+}
+.image-showcase-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 105, 0, 0.06) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+}
+@media (max-width: 768px) {
+  .image-showcase img {
+    height: 260px;
+  }
 }
 .section-image-overlay {
   position: absolute;
