@@ -1,0 +1,1144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      New Patient Referral — Prolonged Video EEG | Nexus Diagnostics | Boca
+      Raton, FL
+    </title>
+    <meta
+      name="description"
+      content="Submit a new patient referral for a prolonged video EEG study. Include demographics, insurance, and clinical notes. Nexus Diagnostics, Boca Raton, FL."
+    />
+    <link rel="canonical" href="https://www.nexusneuro.com/referral" />
+
+    <meta
+      property="og:title"
+      content="New Patient Referral — Prolonged Video EEG | Nexus Diagnostics"
+    />
+    <meta
+      property="og:description"
+      content="Submit a new patient referral for a prolonged video EEG study. Include demographics, insurance, and clinical notes. Nexus Diagnostics, Boca Raton, FL."
+    />
+    <meta property="og:url" content="https://www.nexusneuro.com/referral" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Nexus Diagnostics" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="New Patient Referral — Prolonged Video EEG | Nexus Diagnostics"
+    />
+    <meta
+      name="twitter:description"
+      content="Submit a new patient referral for a prolonged video EEG study."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Noto+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='20' width='100' height='100' fill='%23FF6900'/><text x='50' y='72' font-size='60' font-family='system-ui' font-weight='800' fill='white' text-anchor='middle'>N</text></svg>"
+      type="image/svg+xml"
+    />
+
+    <link rel="stylesheet" href="../css/main.css" />
+
+    <style>
+      /* Referral page-specific styles */
+      .referral-layout {
+        display: grid;
+        grid-template-columns: 1fr 360px;
+        gap: var(--space-11);
+        align-items: start;
+      }
+      .form-card {
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-lg);
+        padding: var(--space-9);
+        box-shadow: var(--shadow-sm);
+      }
+      .form-section-divider {
+        display: flex;
+        align-items: center;
+        gap: var(--space-4);
+        margin: var(--space-9) 0 var(--space-6);
+        padding-bottom: var(--space-4);
+        border-bottom: 1px solid var(--color-border);
+      }
+      .form-section-divider .form-section-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: var(--radius-sm);
+        background: var(--color-primary-10);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-primary);
+        flex-shrink: 0;
+      }
+      .form-section-divider .form-section-icon svg {
+        width: 18px;
+        height: 18px;
+      }
+      .form-section-divider h3 {
+        font-size: 1.125rem;
+        font-weight: 700;
+        color: var(--color-text);
+        margin: 0;
+      }
+      .sidebar-card {
+        position: sticky;
+        top: calc(var(--header-height) + var(--space-6));
+        border: 1px solid var(--color-border);
+        border-left: 4px solid var(--color-primary);
+        border-radius: var(--radius-md);
+        padding: var(--space-7);
+        background: var(--color-surface);
+        box-shadow: var(--shadow-sm);
+      }
+      .sidebar-card h4 {
+        margin-bottom: var(--space-5);
+      }
+      .sidebar-fax {
+        margin-top: var(--space-6);
+        padding-top: var(--space-5);
+        border-top: 1px solid var(--color-border);
+      }
+      .sidebar-fax-number {
+        font-family: var(--font-display);
+        font-size: 1.375rem;
+        font-weight: 800;
+        color: var(--color-primary);
+        display: block;
+        margin-top: var(--space-2);
+      }
+      .file-upload {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: var(--space-4);
+        padding: var(--space-4) var(--space-5);
+        border: 1.5px dashed var(--color-gray-200);
+        border-radius: var(--radius-sm);
+        cursor: pointer;
+        transition:
+          border-color var(--duration-fast) var(--ease-out),
+          background var(--duration-fast) var(--ease-out);
+        min-height: 56px;
+      }
+      .file-upload:hover {
+        border-color: var(--color-primary);
+        background: var(--color-primary-10);
+      }
+      .file-upload input[type="file"] {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        cursor: pointer;
+      }
+      .file-upload-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: var(--radius-sm);
+        background: var(--color-gray-100);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-gray-600);
+        flex-shrink: 0;
+        transition:
+          background var(--duration-fast),
+          color var(--duration-fast);
+      }
+      .file-upload:hover .file-upload-icon {
+        background: var(--color-primary-10);
+        color: var(--color-primary);
+      }
+      .file-upload-text {
+        font-size: 0.875rem;
+        color: var(--color-text-secondary);
+      }
+      .file-upload-text strong {
+        color: var(--color-primary);
+        font-weight: 600;
+      }
+      .form-success-msg {
+        display: none;
+        margin-top: var(--space-7);
+        padding: var(--space-7);
+        background: #f0fdf4;
+        border: 1px solid #bbf7d0;
+        border-radius: var(--radius-md);
+        text-align: center;
+      }
+      .form-success-msg h4 {
+        color: #16a34a;
+        margin-bottom: var(--space-2);
+      }
+      @media (max-width: 1024px) {
+        .referral-layout {
+          grid-template-columns: 1fr;
+          gap: var(--space-8);
+        }
+      }
+      @media (max-width: 768px) {
+        .form-card {
+          padding: var(--space-6);
+        }
+      }
+    </style>
+  </head>
+  <body class="noise">
+    <!-- Skip to Content -->
+    <a href="#main-content" class="skip-to-content">Skip to content</a>
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <!-- Header -->
+    <header class="site-header" role="banner">
+      <div class="header-inner">
+        <a
+          href="../index.html"
+          class="header-logo"
+          aria-label="Nexus Diagnostics Home"
+        >
+          <img
+            src="../assets/images/nexus-logo.png"
+            alt="Nexus Diagnostics"
+            width="160"
+            height="64"
+          />
+          <div class="header-logo-text">Nexus <span>Diagnostics</span></div>
+        </a>
+        <nav class="header-nav" aria-label="Main navigation">
+          <a href="services.html">Services</a>
+          <a href="physicians.html">For Physicians</a>
+          <a href="patients.html">For Patients</a>
+          <a href="ordering.html">How to Order</a>
+          <a href="testimonials.html">Testimonials</a>
+        </nav>
+        <div class="header-ctas">
+          <a
+            href="tel:5614091483"
+            class="header-phone"
+            aria-label="Call Nexus Diagnostics"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+              />
+            </svg>
+            (561) 409-1483
+          </a>
+          <a href="referral.html" class="btn btn-outline btn-sm"
+            >New Referral</a
+          >
+          <a href="ordering.html" class="btn btn-primary btn-sm btn-shine"
+            >Order a Study</a
+          >
+        </div>
+        <button
+          class="menu-toggle"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <a href="../index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="physicians.html">For Physicians</a>
+      <a href="patients.html">For Patients</a>
+      <a href="ordering.html">How to Order</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="referral.html">New Referral</a>
+      <a href="tel:5614091483" class="btn btn-outline">(561) 409-1483</a>
+      <a href="ordering.html" class="btn btn-primary btn-shine"
+        >Order a Study</a
+      >
+    </nav>
+
+    <main id="main-content">
+      <!-- Hero -->
+      <section class="hero hero-sub bg-dots-light hero-with-image">
+        <div class="hero-bg-image" aria-hidden="true">
+          <img
+            src="../assets/images/brain-scans.jpg"
+            alt=""
+            width="1200"
+            height="800"
+            loading="eager"
+          />
+        </div>
+        <div class="container">
+          <div class="hero-content" style="max-width: 720px">
+            <div class="hero-badge reveal">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+                <polyline points="10 9 9 9 8 9" />
+              </svg>
+              Physician Referral
+            </div>
+            <h1 class="h-display hero-title blur-reveal">
+              New Patient Referral
+            </h1>
+            <p class="hero-subtitle reveal">
+              Prolonged Video EEG &mdash; Complete the form below with the
+              patient information you wish to refer. Upload recent clinical
+              notes, insurance information, and patient demographics.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Referral Form -->
+      <section class="section">
+        <div class="container">
+          <div class="referral-layout">
+            <!-- Form Column -->
+            <div class="form-card reveal">
+              <form action="#" method="post" novalidate>
+                <!-- Patient Information -->
+                <div style="margin-bottom: var(--space-6)">
+                  <span class="label">Step 1</span>
+                  <h2 class="h3" style="margin-top: var(--space-2)">
+                    Patient Information
+                  </h2>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="ref-first-name"
+                      >First Name <span class="form-required">*</span></label
+                    >
+                    <input
+                      class="form-input"
+                      type="text"
+                      id="ref-first-name"
+                      name="first_name"
+                      placeholder="Patient first name"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="ref-last-name"
+                      >Last Name <span class="form-required">*</span></label
+                    >
+                    <input
+                      class="form-input"
+                      type="text"
+                      id="ref-last-name"
+                      name="last_name"
+                      placeholder="Patient last name"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="ref-dob"
+                      >Date of Birth <span class="form-required">*</span></label
+                    >
+                    <input
+                      class="form-input"
+                      type="date"
+                      id="ref-dob"
+                      name="date_of_birth"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="ref-phone"
+                      >Patient Contact #
+                      <span class="form-required">*</span></label
+                    >
+                    <input
+                      class="form-input"
+                      type="tel"
+                      id="ref-phone"
+                      name="patient_phone"
+                      placeholder="(555) 123-4567"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="ref-alt-phone"
+                      >Alternative Contact #</label
+                    >
+                    <input
+                      class="form-input"
+                      type="tel"
+                      id="ref-alt-phone"
+                      name="alt_phone"
+                      placeholder="Optional"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="ref-insurance-provider"
+                      >Insurance Provider
+                      <span class="form-required">*</span></label
+                    >
+                    <input
+                      class="form-input"
+                      type="text"
+                      id="ref-insurance-provider"
+                      name="insurance_provider"
+                      placeholder="e.g., Blue Cross Blue Shield"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="ref-insurance-id"
+                    >Insurance ID <span class="form-required">*</span></label
+                  >
+                  <input
+                    class="form-input"
+                    type="text"
+                    id="ref-insurance-id"
+                    name="insurance_id"
+                    placeholder="Member/policy ID number"
+                    required
+                  />
+                </div>
+
+                <!-- Study Details -->
+                <div class="form-section-divider">
+                  <div class="form-section-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                    </svg>
+                  </div>
+                  <div>
+                    <span class="label" style="margin-bottom: 2px">Step 2</span>
+                    <h3>Study Details</h3>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="ref-duration"
+                      >Duration (CPT: 95715)
+                      <span class="form-required">*</span></label
+                    >
+                    <select
+                      class="form-select"
+                      id="ref-duration"
+                      name="duration"
+                      required
+                    >
+                      <option value="" disabled selected>
+                        Select study duration
+                      </option>
+                      <option value="3-day">3-Day</option>
+                      <option value="4-day">4-Day</option>
+                      <option value="5-day">5-Day</option>
+                      <option value="7-day">7-Day</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="ref-routine-eeg"
+                      >Routine EEG Required?</label
+                    >
+                    <select
+                      class="form-select"
+                      id="ref-routine-eeg"
+                      name="routine_eeg"
+                    >
+                      <option value="no">No</option>
+                      <option value="yes">Yes</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="ref-diagnosis"
+                    >Relevant Diagnosis Codes
+                    <span class="form-required">*</span></label
+                  >
+                  <textarea
+                    class="form-textarea"
+                    id="ref-diagnosis"
+                    name="diagnosis_codes"
+                    rows="3"
+                    placeholder="e.g., G40.109 — G40.209 — R55 — R42"
+                    required
+                  ></textarea>
+                  <p class="form-hint">
+                    List all relevant ICD-10 codes separated by dashes or
+                    commas.
+                  </p>
+                </div>
+
+                <!-- Ordering Provider -->
+                <div class="form-section-divider">
+                  <div class="form-section-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                      <circle cx="12" cy="7" r="4" />
+                    </svg>
+                  </div>
+                  <div>
+                    <span class="label" style="margin-bottom: 2px">Step 3</span>
+                    <h3>Ordering Provider</h3>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="ref-provider-name"
+                      >Provider Name <span class="form-required">*</span></label
+                    >
+                    <input
+                      class="form-input"
+                      type="text"
+                      id="ref-provider-name"
+                      name="provider_name"
+                      placeholder="Ordering physician name"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="ref-provider-phone"
+                      >Provider Phone
+                      <span class="form-required">*</span></label
+                    >
+                    <input
+                      class="form-input"
+                      type="tel"
+                      id="ref-provider-phone"
+                      name="provider_phone"
+                      placeholder="(555) 123-4567"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="ref-clinic-contact"
+                    >Clinic Contact Submitting Referral
+                    <span class="form-required">*</span></label
+                  >
+                  <input
+                    class="form-input"
+                    type="text"
+                    id="ref-clinic-contact"
+                    name="clinic_contact"
+                    placeholder="Name of person submitting this form"
+                    required
+                  />
+                </div>
+
+                <!-- Documentation -->
+                <div class="form-section-divider">
+                  <div class="form-section-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                      <polyline points="17 8 12 3 7 8" />
+                      <line x1="12" y1="3" x2="12" y2="15" />
+                    </svg>
+                  </div>
+                  <div>
+                    <span class="label" style="margin-bottom: 2px">Step 4</span>
+                    <h3>Upload Documentation</h3>
+                  </div>
+                </div>
+
+                <p
+                  class="body-sm text-muted"
+                  style="margin-bottom: var(--space-5)"
+                >
+                  Upload clinical notes, patient demographics, and insurance
+                  documents. Accepted formats: PDF, DOC, DOCX, JPG, PNG.
+                </p>
+
+                <div class="form-group">
+                  <label class="form-label" for="ref-upload-clinical"
+                    >Clinical Notes</label
+                  >
+                  <div class="file-upload">
+                    <div class="file-upload-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                        />
+                        <polyline points="14 2 14 8 20 8" />
+                      </svg>
+                    </div>
+                    <div class="file-upload-text">
+                      <strong>Choose file</strong> or drag &amp; drop
+                    </div>
+                    <input
+                      type="file"
+                      id="ref-upload-clinical"
+                      name="clinical_notes"
+                      accept=".pdf,.doc,.docx,.jpg,.png"
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="ref-upload-demographics"
+                    >Patient Demographics</label
+                  >
+                  <div class="file-upload">
+                    <div class="file-upload-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
+                      </svg>
+                    </div>
+                    <div class="file-upload-text">
+                      <strong>Choose file</strong> or drag &amp; drop
+                    </div>
+                    <input
+                      type="file"
+                      id="ref-upload-demographics"
+                      name="demographics"
+                      accept=".pdf,.doc,.docx,.jpg,.png"
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="ref-upload-insurance"
+                    >Insurance Information</label
+                  >
+                  <div class="file-upload">
+                    <div class="file-upload-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                      </svg>
+                    </div>
+                    <div class="file-upload-text">
+                      <strong>Choose file</strong> or drag &amp; drop
+                    </div>
+                    <input
+                      type="file"
+                      id="ref-upload-insurance"
+                      name="insurance_info"
+                      accept=".pdf,.doc,.docx,.jpg,.png"
+                    />
+                  </div>
+                </div>
+
+                <!-- Confirmation -->
+                <div
+                  style="
+                    margin-top: var(--space-8);
+                    padding-top: var(--space-6);
+                    border-top: 1px solid var(--color-border);
+                  "
+                >
+                  <div class="form-group form-checkbox">
+                    <input
+                      type="checkbox"
+                      id="ref-declaration"
+                      name="declaration"
+                      required
+                    />
+                    <label for="ref-declaration"
+                      >I declare that the information I've provided is accurate
+                      and complete <span class="form-required">*</span></label
+                    >
+                  </div>
+
+                  <button
+                    type="submit"
+                    class="btn btn-primary btn-lg btn-shine"
+                    style="width: 100%; margin-top: var(--space-4)"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <line x1="22" y1="2" x2="11" y2="13" />
+                      <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                    </svg>
+                    Submit Referral
+                  </button>
+                </div>
+
+                <div class="form-success-msg">
+                  <h4 class="h4">Referral Received</h4>
+                  <p class="text-muted">
+                    We will contact you within 1 business day to confirm receipt
+                    and next steps.
+                  </p>
+                </div>
+              </form>
+            </div>
+
+            <!-- Sidebar -->
+            <aside>
+              <div class="sidebar-card reveal">
+                <h4 class="h5">Required with Your Referral</h4>
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    gap: var(--space-3);
+                  "
+                >
+                  <div class="checklist-item">
+                    <div class="checklist-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                    </div>
+                    <span>Demographics &amp; insurance</span>
+                  </div>
+                  <div class="checklist-item">
+                    <div class="checklist-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                    </div>
+                    <span>Study duration (3, 4, 5, or 7 day)</span>
+                  </div>
+                  <div class="checklist-item">
+                    <div class="checklist-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                    </div>
+                    <span>ICD-10 diagnosis codes</span>
+                  </div>
+                  <div class="checklist-item">
+                    <div class="checklist-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                    </div>
+                    <span>Previous EEG reports (if applicable)</span>
+                  </div>
+                  <div class="checklist-item">
+                    <div class="checklist-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                    </div>
+                    <span>Clinical / encounter notes</span>
+                  </div>
+                  <div class="checklist-item">
+                    <div class="checklist-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                    </div>
+                    <span>Ordering physician's signature</span>
+                  </div>
+                </div>
+
+                <div class="sidebar-fax">
+                  <p class="body-sm text-muted">Prefer to fax?</p>
+                  <span class="sidebar-fax-number">(561) 258-8154</span>
+                  <p
+                    class="body-xs text-muted"
+                    style="margin-top: var(--space-2)"
+                  >
+                    Include all documentation with your fax submission.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Contact card -->
+              <div
+                class="sidebar-card reveal"
+                style="margin-top: var(--space-5)"
+              >
+                <h4 class="h5" style="margin-bottom: var(--space-3)">
+                  Need Help?
+                </h4>
+                <p
+                  class="body-sm text-muted"
+                  style="margin-bottom: var(--space-4)"
+                >
+                  Our team is available to assist with referrals, insurance
+                  questions, or scheduling coordination.
+                </p>
+                <a
+                  href="tel:5614091483"
+                  class="btn btn-outline btn-sm"
+                  style="width: 100%; margin-bottom: var(--space-2)"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                    />
+                  </svg>
+                  (561) 409-1483
+                </a>
+                <a
+                  href="mailto:support@nexusneuro.com"
+                  class="btn btn-ghost btn-sm"
+                  style="width: 100%"
+                  >support@nexusneuro.com</a
+                >
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta-section">
+        <div class="cta-dots"></div>
+        <div class="container" style="position: relative; z-index: 1">
+          <div class="text-center" style="max-width: 640px; margin: 0 auto">
+            <h2 class="h2 reveal">Prefer to Fax Your Referral?</h2>
+            <p
+              class="body-lg reveal"
+              style="margin-top: var(--space-5); margin-bottom: var(--space-8)"
+            >
+              Download and complete the referral form, then fax to (561)
+              258-8154 with all supporting documentation.
+            </p>
+            <div class="hero-actions reveal" style="justify-content: center">
+              <a
+                href="tel:5614091483"
+                class="btn btn-primary btn-lg btn-shine btn-magnetic"
+                >Call (561) 409-1483</a
+              >
+              <a
+                href="mailto:support@nexusneuro.com"
+                class="btn btn-outline btn-lg"
+                style="
+                  border-color: rgba(255, 255, 255, 0.25);
+                  color: var(--color-white);
+                "
+                >Email Us</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" aria-label="Back to top">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <polyline points="18 15 12 9 6 15" />
+      </svg>
+    </button>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand reveal">
+            <div class="footer-logo">
+              <img
+                src="../assets/images/nexus-logo.png"
+                alt="Nexus Diagnostics"
+                width="140"
+                height="56"
+              />
+              <div class="footer-logo-text">Nexus <span>Diagnostics</span></div>
+            </div>
+            <p>
+              Leaders in in-home video ambulatory EEG testing. Providing
+              physician-grade neurodiagnostic services to neurologists across
+              South Florida.
+            </p>
+          </div>
+          <div class="reveal">
+            <h4 class="footer-heading">Services</h4>
+            <div class="footer-links">
+              <a href="services.html">In-Home Ambulatory EEG</a>
+              <a href="services.html">In-Office Routine EEG</a>
+              <a href="services.html">Interpreting Software</a>
+              <a href="ordering.html">How to Order</a>
+            </div>
+          </div>
+          <div class="reveal">
+            <h4 class="footer-heading">Quick Links</h4>
+            <div class="footer-links">
+              <a href="physicians.html">For Physicians</a>
+              <a href="patients.html">For Patients</a>
+              <a href="referral.html">New Referral</a>
+              <a href="testimonials.html">Testimonials</a>
+            </div>
+          </div>
+          <div class="reveal">
+            <h4 class="footer-heading">Contact</h4>
+            <div class="footer-contact-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <address style="font-style: normal">
+                <strong>Nexus Diagnostics</strong><br />915 Clint Moore Rd.<br />Boca
+                Raton, FL 33487
+              </address>
+            </div>
+            <div class="footer-contact-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                />
+              </svg>
+              <span
+                >P: <a href="tel:5614091483">(561) 409-1483</a><br />F: (561)
+                258-8154</span
+              >
+            </div>
+            <div class="footer-contact-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              <span
+                ><a href="mailto:support@nexusneuro.com"
+                  >support@nexusneuro.com</a
+                ></span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span
+            >&copy; <span data-year></span> Nexus Diagnostics. All Rights
+            Reserved.</span
+          >
+          <div class="footer-legal">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms.html">Terms &amp; Conditions</a>
+          </div>
+        </div>
+      </div>
+      <div class="lyf-credit">
+        Site &amp; System by
+        <a href="https://lyfework.io" target="_blank" rel="noopener"
+          >Lyfework</a
+        >
+      </div>
+    </footer>
+
+    <!-- Mobile Sticky CTA -->
+    <div class="mobile-cta-bar">
+      <a href="tel:5614091483" class="btn btn-outline btn-sm">Call Now</a>
+      <a href="ordering.html" class="btn btn-primary btn-sm btn-shine">Order a Study</a>
+    </div>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>
