@@ -341,6 +341,64 @@
     });
   });
 
+  /* --- Draw-on-Scroll Timeline --- */
+  const timelineDraw = document.querySelector(".timeline-draw");
+  if (
+    timelineDraw &&
+    !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  ) {
+    const timelineLine =
+      timelineDraw.querySelector(":scope::before") || timelineDraw;
+    const timelineItems = timelineDraw.querySelectorAll(".timeline-item");
+    const updateTimeline = () => {
+      const rect = timelineDraw.getBoundingClientRect();
+      const viewH = window.innerHeight;
+      const totalH = timelineDraw.scrollHeight;
+      const scrollInto = Math.max(0, viewH * 0.6 - rect.top);
+      const pct = Math.min(100, Math.max(0, (scrollInto / totalH) * 100));
+      timelineDraw.style.setProperty("--timeline-progress", pct + "%");
+      timelineItems.forEach((item) => {
+        const itemRect = item.getBoundingClientRect();
+        if (itemRect.top < viewH * 0.65) {
+          item.classList.add("is-active");
+        }
+      });
+    };
+    window.addEventListener("scroll", updateTimeline, { passive: true });
+    updateTimeline();
+  }
+
+  /* --- Stagger Reveal with Dynamic Delays --- */
+  document.querySelectorAll(".stagger").forEach((container) => {
+    const children = container.querySelectorAll(".reveal");
+    children.forEach((child, i) => {
+      child.style.transitionDelay = i * 100 + "ms";
+    });
+  });
+
+  /* --- Parallax Sections (subtle) --- */
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const parallaxEls = document.querySelectorAll(".section-image img");
+    if (parallaxEls.length) {
+      window.addEventListener(
+        "scroll",
+        () => {
+          parallaxEls.forEach((img) => {
+            const rect = img.parentElement.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+              const progress =
+                (window.innerHeight - rect.top) /
+                (window.innerHeight + rect.height);
+              img.style.transform =
+                "translateY(" + (progress - 0.5) * 20 + "px) scale(1.05)";
+            }
+          });
+        },
+        { passive: true },
+      );
+    }
+  }
+
   /* --- Form submit handling (demo) --- */
   document.querySelectorAll("form").forEach((form) => {
     form.addEventListener("submit", (e) => {

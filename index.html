@@ -179,10 +179,14 @@
             loading="eager"
           />
         </div>
+        <!-- Animated Gradient Mesh -->
+        <div class="hero-mesh" aria-hidden="true">
+          <div class="hero-mesh-orb"></div>
+        </div>
         <div class="container">
           <div class="hero-split">
             <div class="hero-content">
-              <div class="hero-badge reveal">
+              <div class="hero-badge hero-badge-float reveal">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="14"
@@ -198,7 +202,7 @@
                 </svg>
                 Trusted by Neurologists Across South Florida
               </div>
-              <h1 class="h-display hero-title blur-reveal">
+              <h1 class="h-display hero-title blur-reveal gradient-text-hero">
                 Leaders in In-Home Video Ambulatory EEG Testing
               </h1>
               <p class="hero-subtitle reveal">
@@ -210,7 +214,7 @@
               <div class="hero-actions reveal">
                 <a
                   href="pages/physicians.html"
-                  class="btn btn-primary btn-lg btn-shine btn-magnetic"
+                  class="btn btn-primary btn-lg btn-shine btn-magnetic btn-pulse"
                   >For Physicians</a
                 >
                 <a href="pages/patients.html" class="btn btn-outline btn-lg"
@@ -458,15 +462,30 @@
         </div>
       </div>
 
+      <!-- Wave Divider -->
+      <div class="wave-divider" aria-hidden="true">
+        <svg
+          viewBox="0 0 1440 48"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0 48h1440V24C1320 4 1200 0 1080 8c-120 8-240 24-360 28S480 36 360 28C240 20 120 4 0 0v48z"
+            fill="#f8f8f8"
+          />
+        </svg>
+      </div>
+
       <!-- Services Overview -->
-      <section class="section" id="services">
+      <section class="section section-alt" id="services">
         <div class="container">
           <div
             class="text-center reveal"
             style="max-width: 640px; margin: 0 auto var(--space-11)"
           >
             <span class="label">Our Services</span>
-            <h2 class="h2" style="margin-top: var(--space-3)">
+            <h2 class="h2 gradient-text" style="margin-top: var(--space-3)">
               Three Diagnostic Solutions,<br />One Trusted Partner
             </h2>
             <p class="body-lg text-muted" style="margin-top: var(--space-4)">
@@ -608,10 +627,25 @@
         </div>
       </section>
 
+      <!-- Wave Divider (flip) -->
+      <div class="wave-divider wave-divider-flip" aria-hidden="true">
+        <svg
+          viewBox="0 0 1440 48"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0 48h1440V24C1320 4 1200 0 1080 8c-120 8-240 24-360 28S480 36 360 28C240 20 120 4 0 0v48z"
+            fill="#f8f8f8"
+          />
+        </svg>
+      </div>
+
       <!-- Stats Section -->
-      <section class="section-sm section-alt">
+      <section class="section-sm">
         <div class="container">
-          <div class="stats-grid">
+          <div class="stats-grid stats-glass">
             <div class="stat-item reveal">
               <div class="stat-number">
                 <span data-countup="7" data-suffix="-Day">0</span>
@@ -778,7 +812,7 @@
           <div class="grid-split">
             <div class="reveal">
               <span class="label">Why Nexus</span>
-              <h2 class="h2" style="margin-top: var(--space-3)">
+              <h2 class="h2 gradient-text" style="margin-top: var(--space-3)">
                 The Clinical Partner Neurologists Rely On
               </h2>
               <p
@@ -938,6 +972,21 @@
         </div>
       </section>
 
+      <!-- Wave Divider -->
+      <div class="wave-divider" aria-hidden="true">
+        <svg
+          viewBox="0 0 1440 48"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0 48h1440V24C1320 4 1200 0 1080 8c-120 8-240 24-360 28S480 36 360 28C240 20 120 4 0 0v48z"
+            fill="#f8f8f8"
+          />
+        </svg>
+      </div>
+
       <!-- How It Works (Physicians) -->
       <section class="section section-alt" id="how-it-works">
         <div class="container">
@@ -946,7 +995,7 @@
             style="max-width: 600px; margin: 0 auto var(--space-11)"
           >
             <span class="label">How It Works</span>
-            <h2 class="h2" style="margin-top: var(--space-3)">
+            <h2 class="h2 gradient-text" style="margin-top: var(--space-3)">
               From Referral to Results in Three Steps
             </h2>
           </div>
@@ -1010,7 +1059,10 @@
             </div>
             <div>
               <span class="label reveal">Equipment</span>
-              <h2 class="h2 reveal" style="margin-top: var(--space-3)">
+              <h2
+                class="h2 reveal gradient-text"
+                style="margin-top: var(--space-3)"
+              >
                 Portable, Powerful, Patient-Friendly
               </h2>
               <p

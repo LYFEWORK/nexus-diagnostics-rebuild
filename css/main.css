@@ -2151,6 +2151,380 @@ h6 {
   top: var(--space-3);
 }
 
+/* ============================================================
+   SPECTACULAR ENHANCEMENTS — Clinical Luxe Edition
+   ============================================================ */
+
+/* --- Animated Gradient Mesh (Hero Background) --- */
+.hero-mesh {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.hero-mesh::before,
+.hero-mesh::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.hero-mesh::before {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 105, 0, 0.12) 0%,
+    transparent 70%
+  );
+  top: -15%;
+  right: -5%;
+  animation: meshFloat1 12s infinite alternate;
+}
+.hero-mesh::after {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 105, 0, 0.06) 0%,
+    transparent 70%
+  );
+  bottom: -10%;
+  left: 10%;
+  animation: meshFloat2 15s infinite alternate;
+}
+.hero-mesh-orb {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 140, 50, 0.08) 0%,
+    transparent 70%
+  );
+  filter: blur(60px);
+  top: 40%;
+  left: 50%;
+  animation: meshFloat3 10s ease-in-out infinite alternate;
+}
+
+@keyframes meshFloat1 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(-40px, 30px) scale(1.15);
+  }
+}
+@keyframes meshFloat2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(30px, -20px) scale(1.1);
+  }
+}
+@keyframes meshFloat3 {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    transform: translate(-45%, -55%) scale(1.2);
+  }
+}
+
+/* --- Gradient Text --- */
+.gradient-text {
+  background: linear-gradient(
+    135deg,
+    var(--color-text) 0%,
+    var(--color-text) 40%,
+    var(--color-primary) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gradient-text-hero {
+  background: linear-gradient(
+    135deg,
+    var(--color-gray-900) 0%,
+    var(--color-gray-800) 50%,
+    var(--color-primary) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* --- Section Wave Dividers --- */
+.wave-divider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  margin-top: -1px;
+}
+.wave-divider svg {
+  display: block;
+  width: 100%;
+  height: 48px;
+}
+.wave-divider-flip {
+  transform: scaleY(-1);
+  margin-bottom: -1px;
+  margin-top: 0;
+}
+@media (max-width: 768px) {
+  .wave-divider svg {
+    height: 28px;
+  }
+}
+
+/* --- Glassmorphism Stats --- */
+.stats-glass {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8) var(--space-7);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+.stats-glass::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+}
+.section-alt .stats-glass {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+/* --- Pulsing CTA Effect --- */
+.btn-pulse {
+  animation: btnPulse 2.5s ease-in-out infinite;
+}
+@keyframes btnPulse {
+  0%,
+  100% {
+    box-shadow: 0 4px 20px rgba(255, 105, 0, 0.25);
+  }
+  50% {
+    box-shadow:
+      0 4px 30px rgba(255, 105, 0, 0.45),
+      0 0 0 8px rgba(255, 105, 0, 0.08);
+  }
+}
+
+/* --- Floating Badge Animation --- */
+.hero-badge-float {
+  animation: badgeFloat 3s ease-in-out infinite;
+}
+@keyframes badgeFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* --- Enhanced Service Cards (Glassmorphism border glow) --- */
+.service-card::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(
+    135deg,
+    transparent 40%,
+    rgba(255, 105, 0, 0.15) 100%
+  );
+  z-index: -1;
+  opacity: 0;
+  transition: opacity var(--duration-slow) var(--ease-out);
+}
+.service-card:hover::after {
+  opacity: 1;
+}
+
+/* --- Draw-on-Scroll Timeline --- */
+.timeline-draw::before {
+  background: linear-gradient(
+    180deg,
+    var(--color-primary) var(--timeline-progress, 0%),
+    var(--color-gray-200) var(--timeline-progress, 0%)
+  );
+  transition: none;
+}
+.timeline-draw .timeline-dot {
+  transition: all var(--duration-base) var(--ease-out);
+}
+.timeline-draw .timeline-item.is-active .timeline-dot {
+  background: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(255, 105, 0, 0.15);
+}
+
+/* --- Enhanced Process Step Cards --- */
+.process-step::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 0;
+  background: var(--color-primary);
+  border-radius: 0 0 2px 2px;
+  transition: height var(--duration-slow) var(--ease-out);
+}
+.process-step:hover::after {
+  height: 100%;
+}
+
+/* --- Animated Section Label Accent --- */
+.label::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  margin-right: var(--space-2);
+  vertical-align: middle;
+  animation: labelPulse 2s ease-in-out infinite;
+}
+@keyframes labelPulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+}
+
+/* --- Enhanced CTA Section (Aurora) --- */
+.cta-section::after {
+  content: "";
+  position: absolute;
+  bottom: -20%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 105, 0, 0.08) 0%,
+    transparent 60%
+  );
+  filter: blur(60px);
+  animation: ctaOrb 6s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+@keyframes ctaOrb {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-20px, -30px);
+  }
+}
+
+/* --- Feature Icon Hover Glow --- */
+.feature-icon {
+  transition: all var(--duration-base) var(--ease-out);
+}
+.feature-item:hover .feature-icon {
+  background: var(--color-primary);
+  color: var(--color-white);
+  box-shadow: 0 4px 16px rgba(255, 105, 0, 0.3);
+}
+
+/* --- Enhanced Section Image (parallax-ready) --- */
+.section-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.06);
+  pointer-events: none;
+}
+
+/* --- Scroll Progress Enhancement --- */
+.scroll-progress {
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-primary-light)
+  );
+  box-shadow: 0 0 8px rgba(255, 105, 0, 0.4);
+}
+
+/* --- Enhanced Accordion Hover --- */
+.accordion-item {
+  transition: all var(--duration-base) var(--ease-out);
+}
+.accordion-item:hover {
+  border-color: var(--color-primary-20);
+  box-shadow: var(--shadow-sm);
+}
+
+/* --- Checklist Item Hover Enhancement --- */
+.checklist-item {
+  transition: all var(--duration-base) var(--ease-out);
+  border-radius: var(--radius-sm);
+}
+.checklist-item:hover .checklist-icon {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* --- Spec Item Gradient Border on Hover --- */
+.spec-item {
+  position: relative;
+  overflow: hidden;
+}
+.spec-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 0;
+  background: var(--color-primary);
+  transition: height var(--duration-slow) var(--ease-out);
+}
+.spec-item:hover::before {
+  height: 100%;
+}
+
+/* --- Footer Enhanced --- */
+.site-footer {
+  background: linear-gradient(180deg, var(--color-gray-900) 0%, #1a1a1a 100%);
+}
+
 /* --- Print --- */
 @media print {
   .site-header,
