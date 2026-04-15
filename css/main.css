@@ -1893,6 +1893,21 @@ h6 {
   );
 }
 
+/* Hexagon pattern hero background */
+.hero-bg-hex img {
+  opacity: 0.35;
+  object-position: left center;
+}
+.hero-bg-hex::after {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0.6) 40%,
+    rgba(255, 255, 255, 0.85) 70%,
+    var(--color-bg) 100%
+  );
+}
+
 /* Split hero (text left, image right) */
 .hero-split {
   display: grid;
